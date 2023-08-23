@@ -8,7 +8,7 @@ import cv2 as cv
 import numpy as np
 import mediapipe as mp
 from model import KeyPointClassifier
-from collect_image import collect_image
+from recieve import collect_image
 
 def calc_landmark_list(image, landmarks):
     image_width, image_height = image.shape[1], image.shape[0]
@@ -79,7 +79,7 @@ face_mesh = mp_face_mesh.FaceMesh(
 keypoint_classifier = KeyPointClassifier()
 
 # Read labels
-with open('C:\\Users\\jhll0\\Desktop\\flutter\\weather_flutter\\Facial-emotion-recognition-using-mediapipe\\model\\keypoint_classifier\\keypoint_classifier_label.csv',
+with open('C:\\Users\\jhll0\\Desktop\\flutter\\weather_flutter\\Emotion_distinguish\\model\\keypoint_classifier\\keypoint_classifier_label.csv',
             encoding='utf-8-sig') as f:
     keypoint_classifier_labels = csv.reader(f)
     keypoint_classifier_labels = [row[0] for row in keypoint_classifier_labels]
